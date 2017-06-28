@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Sign Up Form</title>
+        <script src="signUp.js"></script>
+    </head>
+    
+    <body>
+        <h1>Sign Up</h1>
+        <form action="processSignUp.php" method="post">
+            <fieldset>
+                <legend>General Information</legend>
+                First Name: <input type="text" name="firstName" placeholder="First Name"/>
+                Last Name: <input type="text" name="lastName" placeholder="Last Name"/><br><br>
+                Email: <input type="email" name="email" required="required"/><br><br>
+                Phone: <input  maxlength="3" size="1" type="text" id="phoneFirstPart" name="phoneFirstPart" required="required"/>
+                 - <input maxlength="3" size="1" type="text" id="phoneSecondPart" name="phoneSecondPart" required="required"/>
+                 - <input maxlength="4" size="1" type="text" id="phoneThirdPart" name="phoneThirdPart" required="required"/>
+                 Age: <input type="text" id="age" name="age"/>&nbsp&nbsp&nbsp&nbsp
+                 Account type:<input type="radio" name="accType" value="Participant" checked="checked"/>Participant
+                                <input type="radio" name="accType" value="Manager"/>Manager<br><br>
+                 <input type="submit" name="submit" value="Sign Up"/>&nbsp
+                 <input type="reset" value="Reset Form"/><br><br>
+                 <input type="submit" name="return" value="Return to Main Menu"/>
+            </fieldset>
+        </form>
+        
+    </body>
+</html>
