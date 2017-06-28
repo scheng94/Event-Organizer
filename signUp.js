@@ -1,12 +1,19 @@
 window.onsubmit=validateForm;
 
 function validateForm(){
+    var password1 = document.getElementById("password").value;
+    var password2 = document.getElementById("confirmPW").value;
     var phone1 = document.getElementById("phoneFirstPart").value;
     var phone2 = document.getElementById("phoneSecondPart").value;
     var phone3 = document.getElementById("phoneThirdPart").value;
     var age = document.getElementById("age").value;
     
     var invalid = "";
+    
+    if(password1 != password2){
+        invalid += "Passwords do not match\n";
+    }
+    
     if(String(parseInt(phone1)) !== phone1 || (String(parseInt(phone2)) !== phone2) || (String(parseInt(phone3)) !== phone3)){
         invalid += "Invalid phone number\n";
     }

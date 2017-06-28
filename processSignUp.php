@@ -9,6 +9,7 @@
 		$firstName = trim($_POST["firstName"]);
 		$lastName = trim($_POST["lastName"]);
 		$email = trim($_POST["email"]);
+		$password = $_POST["password"];
 		$phone = $_POST["phoneFirstPart"]."-".$_POST["phoneSecondPart"]."-".$_POST["phoneThirdPart"];
 		$age = $_POST["age"];
 	
@@ -18,8 +19,9 @@
 			$accType = 'P';
 		}
     
-		$sqlQuery = sprintf("insert into {$db->getTable()} (firstName, lastName, email, phone, age, accountType) values ('%s', '%s', '%s', '%s', %s, '%s')",
-                        $firstName, $lastName, $email, $phone, $age, $accType);
+		$sqlQuery = sprintf("insert into {$db->getTable()} (firstName, lastName, email, phone, age, accountType, password)
+							values ('%s', '%s', '%s', '%s', %s, '%s', '%s')",
+                        $firstName, $lastName, $email, $phone, $age, $accType, $password);
 		$result = mysqli_query($database, $sqlQuery);
 		
 		if($result){
