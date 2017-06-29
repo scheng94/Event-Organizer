@@ -3,6 +3,8 @@
     require("database.php");
     
     if(isset($_POST["submit"])){
+        session_start();
+        
         $db = new database("users");
         $database = $db->connectToDB();
         
@@ -20,8 +22,11 @@
                     $email = $recordArray['email'];
                     $userPW = $recordArray['password'];
                     $accountType = $recordArray['accountType'];
+                    $firstName = $recordArray['firstName'];
                 
                     if($_POST["password"] == $userPW && $_POST["email"] == $email && $accountType == 'M'){
+                        $_SESSION['firstName'] = $firstName;
+                        $_SESSION['email'] = $email;
                         header("Location: managerOptions.php");
                     }
                 }
